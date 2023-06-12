@@ -1,12 +1,19 @@
 const { createApp } = Vue;
 
 createApp({
-    data(){
-        return{
-            var1: 'Test'
+    data() {
+        return {
+            toDoList: undefined
         }
     },
-    mounted(){
-        console.log(this.var1);
+    mounted() {
+        axios.get('api.php')
+            .then(response => {
+                this.toDoList = response.data;
+                console.log(this.toDoList);
+            })
+            .catch(error => {
+                console.log(error);
+            });
     }
 }).mount('#app');

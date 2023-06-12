@@ -2,43 +2,43 @@
 
 $toDoList = [
     [
-        "testo" => "Fare la spesa",
+        "text" => "Fare la spesa",
         "did" => true
     ],
     [
-        "testo" => "Pagare le bollette",
+        "text" => "Pagare le bollette",
         "did" => false
     ],
     [
-        "testo" => "Andare in palestra",
+        "text" => "Andare in palestra",
         "did" => true
     ],
     [
-        "testo" => "Chiamare mamma",
+        "text" => "Chiamare mamma",
         "did" => false
     ],
     [
-        "testo" => "Prenotare il viaggio",
+        "text" => "Prenotare il viaggio",
         "did" => true
     ],
     [
-        "testo" => "Comprare i biglietti del cinema",
+        "text" => "Comprare i biglietti del cinema",
         "did" => false
     ],
     [
-        "testo" => "Preparare la cena",
+        "text" => "Preparare la cena",
         "did" => true
     ],
     [
-        "testo" => "Lavare i piatti",
+        "text" => "Lavare i piatti",
         "did" => false
     ],
     [
-        "testo" => "Portare fuori il cane",
+        "text" => "Portare fuori il cane",
         "did" => true
     ],
     [
-        "testo" => "Riordinare la stanza",
+        "text" => "Riordinare la stanza",
         "did" => false
     ]
 ];

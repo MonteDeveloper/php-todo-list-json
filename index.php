@@ -12,8 +12,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.js" integrity="sha512-RjvSEaeDqPCfUVQ9kna2/2OqHz/7F04IOl1/66LmQjB/lOeAzwq7LrbTzDbz5cJzlPNJ5qteNtHR56XaJSTNWw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
-<body>
-    <div id="app"></div>
+<body class="bg-dark">
+    <div id="app">
+        <div class="container">
+            <h1 class="text-light text-center my-5">TO DO LIST w/json</h1>
+            <div class="d-flex flex-column gap-3 text-center fs-4">
+                <div v-for="toDo in toDoList" class="bg-light p-3 rounded shadow border border-4" :class="toDo.did ? 'border-success' : 'border-danger'">
+                    <p class="m-0">
+                        {{ toDo.text }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="./main.js"></script>
     <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4' crossorigin='anonymous'></script>
