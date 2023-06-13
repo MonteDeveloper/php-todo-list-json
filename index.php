@@ -9,7 +9,7 @@
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65' crossorigin='anonymous'>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.js" integrity="sha512-RjvSEaeDqPCfUVQ9kna2/2OqHz/7F04IOl1/66LmQjB/lOeAzwq7LrbTzDbz5cJzlPNJ5qteNtHR56XaJSTNWw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>    
 </head>
 
 <body class="bg-dark">
@@ -22,11 +22,11 @@
                     <button class="btn btn-success fs-3 px-4">AGGIUNGI</button>
                 </div>
                 <div class="d-flex flex-column gap-1 fs-4 rounded shadow overflow-hidden">
-                    <div v-for="toDo in toDoList" class="bg-light p-3 d-flex justify-content-between align-items-center">
-                        <p class="m-0" :class="toDo.did ? 'text-decoration-line-through' : 'border-danger'">
+                    <div v-for="(toDo, index) in toDoList" class="bg-light p-3 d-flex justify-content-between align-items-center">
+                        <p class="m-0 fs-4" :class="{'text-decoration-line-through' : toDo.did}" @click="modifyTask('sign', index)">
                             {{ toDo.text }}
                         </p>
-                        <button class="btn btn-danger fs-3"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-danger fs-3" @click="modifyTask('delete', index)"><i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>
             </div>
