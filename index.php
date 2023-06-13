@@ -16,11 +16,18 @@
     <div id="app">
         <div class="container">
             <h1 class="text-light text-center my-5">TO DO LIST w/json</h1>
-            <div class="d-flex flex-column gap-3 text-center fs-4">
-                <div v-for="toDo in toDoList" class="bg-light p-3 rounded shadow border border-4" :class="toDo.did ? 'border-success' : 'border-danger'">
-                    <p class="m-0">
-                        {{ toDo.text }}
-                    </p>
+            <div class="d-flex flex-column gap-3">
+                <div class="input-group">
+                    <input type="text" class="form-control fs-4 py-3" id="addTaskInput" placeholder="Inserisci elemento...">
+                    <button class="btn btn-success fs-3 px-4">AGGIUNGI</button>
+                </div>
+                <div class="d-flex flex-column gap-1 fs-4 rounded shadow overflow-hidden">
+                    <div v-for="toDo in toDoList" class="bg-light p-3 d-flex justify-content-between align-items-center">
+                        <p class="m-0" :class="toDo.did ? 'text-decoration-line-through' : 'border-danger'">
+                            {{ toDo.text }}
+                        </p>
+                        <button class="btn btn-danger fs-3"><i class="fa-solid fa-trash"></i></button>
+                    </div>
                 </div>
             </div>
         </div>
