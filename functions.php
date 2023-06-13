@@ -8,7 +8,17 @@ function signTask($toDoList, $taskId){
 
 function deleteTask($toDoList, $taskId){
     unset($toDoList[$taskId]);
+    $toDoList = array_values($toDoList);
     return $toDoList;
 }
+
+function addTask(&$toDoList, $taskText){
+    $toDoList[] = [
+        'text' => $taskText,
+        'did' => false
+    ];
+    return $toDoList;
+}
+
 
 ?>

@@ -3,7 +3,8 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            toDoList: undefined
+            toDoList: undefined,
+            inputTextTask: ""
         }
     },
     mounted() {
@@ -32,6 +33,25 @@ createApp({
             })
                 .then(response => {
                     this.toDoList = response.data;
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        },
+        addTask(taskToAdd){
+            const data = {
+                taskText: taskToAdd,
+                action: 'add'
+            }
+
+            axios.post('api.php', data, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            })
+                .then(response => {
+                    this.toDoList = response.data;
+                    this.inputTextTask = "";
                 })
                 .catch(error => {
                     console.log(error);

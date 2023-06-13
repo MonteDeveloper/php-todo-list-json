@@ -14,6 +14,8 @@ if(isset($_POST['action'])){
         $toDoList = signTask($toDoList, $_POST['taskId']);
     }else if($_POST['action'] == 'delete'){
         $toDoList = deleteTask($toDoList, $_POST['taskId']);
+    }else if($_POST['action'] == 'add'){
+        $toDoList = addTask($toDoList, $_POST['taskText']);
     }
 
     $toDoListJson = json_encode($toDoList);
